@@ -85,6 +85,11 @@
 }
 
 .animal{
-    background:url("./animal.svg");
+    background:url("./monsters.svg");
+    background-size: cover;
+}
+
+.chest{
+    background:url("./treasure.svg");
     background-size: cover;
 }
