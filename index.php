@@ -12,7 +12,7 @@
 </head>
 <body> 
 
-<form action="level.php" method="post">
+<form action="game.html" method="post">
   <h2>PLAYER NAME</h2>
   <input type="text" name="name" placeholder="NAME" autocomplete="false">
     

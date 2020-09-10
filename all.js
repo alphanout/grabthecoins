@@ -21,9 +21,9 @@
         maxStep: 0.08,
         wobbleSpeed: 10,
         wobbleDist: 0.05,
-        playerXSpeed: 8,
+        playerXSpeed: 7,
         gravity: 30,
-        jumpSpeed: 17,
+        jumpSpeed: 21,
         lives: 3
     };
 
@@ -557,7 +557,7 @@
             });
         }
         (new Audio('./audio/music/uw-entrance.ogg')).play();
-        startLevel(2);
+        startLevel(4 );
     };
 
     function startGame() {
