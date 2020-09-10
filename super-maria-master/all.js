@@ -191,7 +191,8 @@
             this.finishDelay = 1;
         } else if (type === "coin") {
             // remove collected coin
-            var coincollectedSound = new Audio("./app/sound/Mario-coin-sound.mp3");
+            // var coincollectedSound = new Audio("./app/sound/Mario-coin-sound.mp3");
+            var coincollectedSound = new Audio("./audio/fx/coin.ogg");
             coincollectedSound.play();
             this.actors = this.actors.filter(function (other) {
                 return other !== actor;
@@ -523,6 +524,7 @@
                 if (status == "lost") {
                     opts.lives--;
                     if (opts.lives === 0) {
+                        (new Audio('./audio/music/die.ogg')).play();
                         console.log("Game Over");
                         alert("Game Over");
                     } else
@@ -531,12 +533,16 @@
                     startLevel(n + 1);
                 else {
                     console.log("You win!");
+                    (new Audio('./audio/music/level-clear.ogg')).play();
+                    
                     displayWinMsg();
                 }
             });
         }
         startLevel(0);
     };
+
+
 
     function startGame() {
         runGame(GAME_LEVELS, DisplayView);
@@ -550,5 +556,11 @@
     });
 
     startGame();
+
+    function sleep(miliseconds) {
+        var currentTime = new Date().getTime();
+
+        while (currentTime + miliseconds >= new Date().getTime()) {}
+    }
 
 })(window);
