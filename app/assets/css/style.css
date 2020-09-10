@@ -3,7 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+.li{
+    width: 160px;
+    height: 40px;
+   
+    background-color: aliceblue;
+    float:right;
+   
 
+}
+
+.pl {
+    left: 100px;
+    float: left;
+    width: 240px;
+
+
+}
 body{
     background: black;
 }
@@ -79,6 +95,7 @@ body{
     margin-top: 10px;
     border-radius: 8px;
     border: 1px solid #5c94fa;
+    float: center;
 }
 
 .spike{
