@@ -184,6 +184,9 @@
             }
             else if(type === "coin") {
                 // remove collected coin
+                var coincollected = new Audio("./app/sound/Mario-coin-sound.mp3");
+                coincollected.play();
+
                 this.actors = this.actors.filter(function(other) {
                     return other !== actor;
                 });
