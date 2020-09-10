@@ -561,10 +561,12 @@
     function startGame() {
         hideLossMsg();
         hideWinMsg();
+        opts.lives = 3;
+        changeText();
         runGame(GAME_LEVELS, DisplayView);
     }
 
-    function changeText(value) {
+    function changeText() {
         document.getElementById('lives').innerHTML = "lives : " + opts.lives;
     }
 
