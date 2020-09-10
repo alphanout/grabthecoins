@@ -21,7 +21,7 @@
         maxStep: 0.08,
         wobbleSpeed: 10,
         wobbleDist: 0.05,
-        playerXSpeed: 10,
+        playerXSpeed: 8,
         gravity: 30,
         jumpSpeed: 17,
         lives: 3
@@ -546,16 +546,18 @@
                         displayLossMsg();
                     } else
                         startLevel(n);
-                } else if (n < plans.length - 1)
+                } else if (n < plans.length - 1) {
+                    (new Audio('./audio/fx/flagpole.ogg')).play();
                     startLevel(n + 1);
-                else {
+                } else {
                     console.log("You win!");
                     (new Audio('./audio/music/level-clear.ogg')).play();
                     displayWinMsg();
                 }
             });
         }
-        startLevel(0);
+        (new Audio('./audio/music/uw-entrance.ogg')).play();
+        startLevel(2);
     };
 
     function startGame() {
@@ -563,6 +565,7 @@
         hideWinMsg();
         opts.lives = 3;
         changeText();
+
         runGame(GAME_LEVELS, DisplayView);
     }
 
