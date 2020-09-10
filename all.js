@@ -545,7 +545,7 @@
                 else {
                     console.log("You win!");
                     (new Audio('./audio/music/level-clear.ogg')).play();
-                    
+
                     displayWinMsg();
                 }
             });
@@ -554,23 +554,21 @@
     };
 
     function startGame() {
+        hideLossMsg();
+        hideWinMsg();
         runGame(GAME_LEVELS, DisplayView);
     }
 
     // restart game after winning
     var restart = document.getElementsByClassName("restart-btn")[0];
+    var restart2 = document.getElementsByClassName("restart-btn")[1];
     restart.addEventListener("click", function () {
-        hideWinMsg();
-        // hideLossMsg();
+        startGame();
+    });
+    restart2.addEventListener("click", function () {
         startGame();
     });
 
     startGame();
-
-    function sleep(miliseconds) {
-        var currentTime = new Date().getTime();
-
-        while (currentTime + miliseconds >= new Date().getTime()) {}
-    }
 
 })(window);
