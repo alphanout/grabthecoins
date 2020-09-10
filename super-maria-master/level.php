@@ -22,7 +22,7 @@
     	<div class="card">
       	<img class="card-img-top" src="unlock.png" alt="Card image cap">
 				<div class="card-block">
-				<a href="#" class="btn btn-primary">Begin with level 1, Go BRO Go</a>
+				<a href="game.html" class="btn btn-primary">Begin with level 1, Go BRO Go</a>
 				</div>
 			</div>
 		</div>
