@@ -22,6 +22,12 @@
     	<div class="card">
       	<img class="card-img-top" src="unlock.png" alt="Card image cap">
 				<div class="card-block">
+				<?php
+					$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+					$txt = "0\n";
+					fwrite($myfile, $txt);
+					fclose($myfile);
+				?>
 				<a href="game.html" class="btn btn-primary">Begin with level 1, Go BRO Go</a>
 				</div>
 			</div>

@@ -181,6 +181,7 @@
         if (type === "lava" && this.status === null) {
             this.status = "lost";
             this.finishedDelay = 1;
+            (new Audio('./audio/music/die.ogg')).play();
         }
         if (type == "animal" && this.status === null) {
             this.status = "lost";
@@ -468,11 +469,15 @@
     function trackKeys(codes) {
         var keyPressed = Object.create(null);
 
+
         function handler(event) {
             if (codes.hasOwnProperty(event.keyCode)) {
                 var down = event.type === "keydown";
                 keyPressed[codes[event.keyCode]] = down;
                 event.preventDefault();
+                // if (codes[event.keyCode] === 'up') {
+                //     (new Audio('./audio/fx/jump.ogg')).play();
+                // }
             }
         }
         addEventListener("keydown", handler);
@@ -534,8 +539,9 @@
             runLevel(new Level(plans[n]), Display, function (status) {
                 if (status == "lost") {
                     opts.lives--;
+                    changeText();
                     if (opts.lives === 0) {
-                        (new Audio('./audio/music/die.ogg')).play();
+                        (new Audio('./audio/music/game-over.ogg')).play();
                         // console.log("Game Over");
                         displayLossMsg();
                     } else
@@ -545,7 +551,6 @@
                 else {
                     console.log("You win!");
                     (new Audio('./audio/music/level-clear.ogg')).play();
-
                     displayWinMsg();
                 }
             });
@@ -557,6 +562,10 @@
         hideLossMsg();
         hideWinMsg();
         runGame(GAME_LEVELS, DisplayView);
+    }
+
+    function changeText(value) {
+        document.getElementById('lives').innerHTML = "lives : " + opts.lives;
     }
 
     // restart game after winning
