@@ -8,14 +8,24 @@
 </head>
 
 <body>
-    <div>
+    <div class="pl">
+        <h1   style="background-color:white;">
+       Hi, <?php echo $_POST["name"]; ?>
+        </h1>
+        
+        
+    </div>
+    <div class="li">
         <h1 id="lives"  style="background-color:white;">
             lives : 3
         </h1>
     </div>
+    
+    
     <div id="loss-msg">
         <h1>Oops ! You lost !!!</h1>
-        <button class="restart-btn">Restart the game</button>
+        <button class="restart-btn">Restart the game</button></br>
+        <a href="login.php"><button class="restart-btn">New user?</button></a>
     </div>
     <div id="win-msg">
         <h1>Congratulation ! You win !!!</h1>
