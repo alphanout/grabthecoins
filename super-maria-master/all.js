@@ -3,7 +3,7 @@
     'use strict';
 
 
-    var coincollectedSound = new Audio("./app/sound/Mario-coin-sound.mp3");
+    
 
 
 
@@ -191,6 +191,7 @@
             this.finishDelay = 1;
         } else if (type === "coin") {
             // remove collected coin
+            var coincollectedSound = new Audio("./app/sound/Mario-coin-sound.mp3");
             coincollectedSound.play();
             this.actors = this.actors.filter(function (other) {
                 return other !== actor;
