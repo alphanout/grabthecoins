@@ -25,7 +25,7 @@
     <div id="loss-msg">
         <h1>Oops ! You lost !!!</h1>
         <button class="restart-btn">Restart the game</button></br>
-        <a href="login.php"><button class="restart-btn">New user?</button></a>
+        <a href="index.php"><button class="restart-btn">New user?</button></a>
     </div>
     <div id="win-msg">
         <h1>Congratulation ! You win !!!</h1>
