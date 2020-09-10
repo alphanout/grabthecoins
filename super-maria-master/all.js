@@ -490,6 +490,14 @@
         document.getElementById("win-msg").style.display = "none";
     }
 
+    function displayLossMsg() {
+        document.getElementById("loss-msg").style.display = "block";
+    }
+
+    function hideLossMsg() {
+        document.getElementById("loss-msg").style.display = "none";
+    }
+
     function runAnimation(frameFunc) {
         var start = null;
 
@@ -528,8 +536,8 @@
                     opts.lives--;
                     if (opts.lives === 0) {
                         (new Audio('./audio/music/die.ogg')).play();
-                        console.log("Game Over");
-                        alert("Game Over");
+                        // console.log("Game Over");
+                        displayLossMsg();
                     } else
                         startLevel(n);
                 } else if (n < plans.length - 1)
@@ -556,6 +564,7 @@
     restart.addEventListener("click", function () {
         startGame();
         hideWinMsg();
+        hideLossMsg();
     });
 
     startGame();
