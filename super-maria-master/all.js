@@ -186,6 +186,8 @@
                 // remove collected coin
                 this.actors = this.actors.filter(function(other) {
                     return other !== actor;
+                    coinCount += 1
+                    
                 });
                 // check if all coins are collected
                 var allCoinsCollected = !this.actors.some(function(actor) {
@@ -368,6 +370,9 @@
     // draw static elements - wall, static lava, space 
     DisplayView.method("drawBackground", function() {
         var table = elem("table", "background");
+        var displayCoin = table.appendChild(elem("tr"));
+        displayCoin.style.height = scale + "px";
+        displayCoin.appendChild(elem("td", "coin"));
         table.style.width = this.level.width * scale + "px";
         this.level.grid.forEach(function(line) {
             var row = table.appendChild(elem("tr"));
