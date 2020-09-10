@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background: black;
+}
+
 .background {
     background: rgb(0, 0, 0);
     border-spacing: 0;
