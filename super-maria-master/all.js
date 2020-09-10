@@ -3,7 +3,7 @@
     'use strict';
 
 
-    
+
 
 
 
@@ -529,8 +529,10 @@
                         startLevel(n);
                 } else if (n < plans.length - 1)
                     startLevel(n + 1);
-                else
+                else {
                     console.log("You win!");
+                    displayWinMsg();
+                }
             });
         }
         startLevel(0);
