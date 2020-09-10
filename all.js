@@ -553,8 +553,6 @@
         startLevel(0);
     };
 
-
-
     function startGame() {
         runGame(GAME_LEVELS, DisplayView);
     }
@@ -562,9 +560,9 @@
     // restart game after winning
     var restart = document.getElementsByClassName("restart-btn")[0];
     restart.addEventListener("click", function () {
-        startGame();
         hideWinMsg();
-        hideLossMsg();
+        // hideLossMsg();
+        startGame();
     });
 
     startGame();
