@@ -557,7 +557,7 @@
             });
         }
         (new Audio('./audio/music/uw-entrance.ogg')).play();
-        startLevel(4 );
+        startLevel(0);
     };
 
     function startGame() {
